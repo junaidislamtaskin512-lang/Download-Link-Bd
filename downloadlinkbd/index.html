@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Links BD - Ultimate Video & Audio Downloader</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Logos & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins & Orbitron for Unique Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        orbitron: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        brandDark: '#0f172a',
+                        brandCard: '#1e293b',
+                        brandPrimary: '#6366f1',
+                        brandAccent: '#ec4899',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Animations */
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .floating-icon {
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.8); }
+        }
+        .glow-box {
+            animation: pulseGlow 3s infinite;
+        }
+    </style>
+</head>
+<body class="bg-brandDark text-white font-poppins min-h-screen overflow-x-hidden selection:bg-brandPrimary selection:text-white">
+
+    <!-- INTRO SPLASH / ANIMATION SCREEN -->
+    <div id="splashScreen" class="fixed inset-0 z-50 bg-brandDark flex flex-col items-center justify-center transition-all duration-700">
+        <div class="flex space-x-6 mb-8 text-4xl md:text-6xl">
+            <i class="fab.fa-youtube text-red-500 floating-icon" style="animation-delay: 0s;"></i>
+            <i class="fab.fa-facebook text-blue-500 floating-icon" style="animation-delay: 0.5s;"></i>
+            <i class="fab.fa-tiktok text-pink-500 floating-icon" style="animation-delay: 1s;"></i>
+            <i class="fab.fa-instagram text-purple-500 floating-icon" style="animation-delay: 1.5s;"></i>
+            <i class="fab.fa-twitter text-sky-400 floating-icon" style="animation-delay: 2s;"></i>
+            <i class="fas.fa-globe text-emerald-400 floating-icon" style="animation-delay: 2.5s;"></i>
+        </div>
+        <h1 class="font-orbitron text-3xl md:text-5xl font-black tracking-wider bg-gradient-to-r from-brandPrimary via-pink-500 to-amber-400 bg-clip-text text-transparent text-center px-4 animate-pulse">
+            DOWNLOAD LINKS BD
+        </h1>
+        <p class="text-gray-400 mt-3 text-sm tracking-widest uppercase">Loading Your Ultimate Media Hub...</p>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="border-b border-gray-800 bg-brandDark/80 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brandPrimary to-brandAccent flex items-center justify-center shadow-lg">
+                    <i class="fas fa-cloud-arrow-down text-xl text-white"></i>
+                </div>
+                <span class="font-orbitron font-bold text-xl md:text-2xl bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                    DownloadLinks<span class="text-brandPrimary">BD</span>
+                </span>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-300">
+                <a href="#downloader" class="hover:text-brandPrimary transition">Home</a>
+                <a href="#platforms" class="hover:text-brandPrimary transition">Platforms</a>
+                <a href="#features" class="hover:text-brandPrimary transition">Features</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO & DOWNLOAD SECTION -->
+    <section id="downloader" class="max-w-4xl mx-auto px-4 pt-16 pb-12 text-center">
+        <span class="bg-brandPrimary/20 text-brandPrimary text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest border border-brandPrimary/30">
+            ⚡ No Watermark • 4K/2K/1080p • MP3 Supported
+        </span>
+        <h2 class="font-orbitron text-3xl md:text-5xl font-extrabold mt-6 leading-tight">
+            Download Any Video & Audio <br><span class="bg-gradient-to-r from-brandPrimary to-brandAccent bg-clip-text text-transparent">Instantly & Free</span>
+        </h2>
+        <p class="text-gray-400 mt-4 max-w-xl mx-auto text-sm md:text-base">
+            Paste link from YouTube, Facebook, TikTok, Instagram, Twitter, or Others and choose your preferred quality.
+        </p>
+
+        <!-- INPUT BOX & PLATFORM SELECTOR -->
+        <div class="mt-8 bg-brandCard p-4 md:p-6 rounded-2xl border border-gray-700/60 shadow-2xl glow-box">
+            <div class="flex flex-col md:flex-row gap-3">
+                <div class="relative flex-grow">
+                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                        <i class="fas fa-link"></i>
+                    </span>
+                    <input type="url" id="mediaUrl" placeholder="Paste video link here (e.g., https://youtube.com/...)" 
+                        class="w-full pl-11 pr-4 py-4 bg-brandDark border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-brandPrimary transition text-sm">
+                </div>
+                <button onclick="handleFetchMedia()" class="bg-gradient-to-r from-brandPrimary to-brandAccent hover:opacity-90 font-semibold px-8 py-4 rounded-xl transition duration-300 flex items-center justify-center space-x-2 shadow-lg cursor-pointer">
+                    <i class="fas fa-search"></i>
+                    <span>Analyze</span>
+                </button>
+            </div>
+
+            <!-- Platform Quick Badges -->
+            <div class="flex flex-wrap justify-center gap-3 mt-6 pt-4 border-t border-gray-800">
+                <span class="text-xs text-gray-400 self-center mr-2">Supported:</span>
+                <span class="px-3 py-1 bg-red-500/10 text-red-400 border border-red-500/20 rounded-full text-xs font-medium flex items-center gap-1.5"><i class="fab fa-youtube"></i> YouTube</span>
+                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-medium flex items-center gap-1.5"><i class="fab fa-facebook"></i> Facebook</span>
+                <span class="px-3 py-1 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-full text-xs font-medium flex items-center gap-1.5"><i class="fab fa-tiktok"></i> TikTok</span>
+                <span class="px-3 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-full text-xs font-medium flex items-center gap-1.5"><i class="fab fa-instagram"></i> Instagram</span>
+                <span class="px-3 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full text-xs font-medium flex items-center gap-1.5"><i class="fab fa-twitter"></i> Twitter</span>
+                <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-xs font-medium flex items-center gap-1.5"><i class="fas fa-globe"></i> Others</span>
+            </div>
+        </div>
+
+        <!-- DOWNLOAD RESULTS MODAL / PANEL (Hidden by default, shown on analyze) -->
+        <div id="resultPanel" class="hidden mt-8 bg-brandCard p-6 rounded-2xl border border-brandPrimary/50 text-left transition-all animate-fadeIn">
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="w-full md:w-1/3 bg-brandDark rounded-xl overflow-hidden aspect-video relative flex items-center justify-center border border-gray-700">
+                    <i class="fas fa-film text-4xl text-brandPrimary animate-bounce"></i>
+                    <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded text-white">HD Quality</span>
+                </div>
+                <div class="w-full md:w-2/3 space-y-4">
+                    <h3 id="videoTitle" class="font-semibold text-lg text-white">Sample Video Title - Download Links BD Ready</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                        <button onclick="triggerDownload('4K Ultra HD')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2.5 rounded-lg text-xs font-medium flex flex-col items-center transition">
+                            <span class="text-brandPrimary font-bold text-sm">4K</span>
+                            <span class="text-gray-400 text-[10px]">No Watermark</span>
+                        </button>
+                        <button onclick="triggerDownload('2K Quad HD')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2.5 rounded-lg text-xs font-medium flex flex-col items-center transition">
+                            <span class="text-brandPrimary font-bold text-sm">2K</span>
+                            <span class="text-gray-400 text-[10px]">High Res</span>
+                        </button>
+                        <button onclick="triggerDownload('1080p FHD')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2.5 rounded-lg text-xs font-medium flex flex-col items-center transition">
+                            <span class="text-brandPrimary font-bold text-sm">1080p</span>
+                            <span class="text-gray-400 text-[10px]">HD Video</span>
+                        </button>
+                        <button onclick="triggerDownload('360p SD')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2.5 rounded-lg text-xs font-medium flex flex-col items-center transition">
+                            <span class="text-gray-400 font-bold text-sm">360p</span>
+                            <span class="text-gray-400 text-[10px]">Low Data</span>
+                        </button>
+                        <button onclick="triggerDownload('MP3 Audio (320kbps)')" class="bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/40 p-2.5 rounded-lg text-xs font-medium flex flex-col items-center transition col-span-2">
+                            <span class="text-pink-400 font-bold text-sm"><i class="fas fa-music mr-1"></i> Audio MP3</span>
+                            <span class="text-gray-300 text-[10px]">320kbps High Quality</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLATFORMS GRID SECTION -->
+    <section id="platforms" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h3 class="font-orbitron text-2xl md:text-3xl font-bold">Supported Platforms</h3>
+            <p class="text-gray-400 text-sm mt-2">Download from your favorite social media networks seamlessly.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            <!-- YouTube -->
+            <div class="bg-brandCard p-6 rounded-2xl border border-gray-800 text-center hover:border-red-500/50 transition transform hover:-translate-y-1">
+                <i class="fab.fa-youtube text-4xl text-red-500 mb-3"></i>
+                <h4 class="font-semibold text-sm">YouTube</h4>
+                <p class="text-xs text-gray-400 mt-1">Video & Audio</p>
+            </div>
+            <!-- Facebook -->
+            <div class="bg-brandCard p-6 rounded-2xl border border-gray-800 text-center hover:border-blue-500/50 transition transform hover:-translate-y-1">
+                <i class="fab.fa-facebook text-4xl text-blue-500 mb-3"></i>
+                <h4 class="font-semibold text-sm">Facebook</h4>
+                <p class="text-xs text-gray-400 mt-1">Reels & Videos</p>
+            </div>
+            <!-- TikTok -->
+            <div class="bg-brandCard p-6 rounded-2xl border border-gray-800 text-center hover:border-pink-500/50 transition transform hover:-translate-y-1">
+                <i class="fab.fa-tiktok text-4xl text-pink-500 mb-3"></i>
+                <h4 class="font-semibold text-sm">TikTok</h4>
+                <p class="text-xs text-gray-400 mt-1">No Watermark</p>
+            </div>
+            <!-- Instagram -->
+            <div class="bg-brandCard p-6 rounded-2xl border border-gray-800 text-center hover:border-purple-500/50 transition transform hover:-translate-y-1">
+                <i class="fab.fa-instagram text-4xl text-purple-500 mb-3"></i>
+                <h4 class="font-semibold text-sm">Instagram</h4>
+                <p class="text-xs text-gray-400 mt-1">Reels & Stories</p>
+            </div>
+            <!-- Twitter -->
+            <div class="bg-brandCard p-6 rounded-2xl border border-gray-800 text-center hover:border-sky-500/50 transition transform hover:-translate-y-1">
+                <i class="fab.fa-twitter text-4xl text-sky-400 mb-3"></i>
+                <h4 class="font-semibold text-sm">Twitter / X</h4>
+                <p class="text-xs text-gray-400 mt-1">HD Media</p>
+            </div>
+            <!-- Others (Universal) -->
+            <div class="bg-brandCard p-6 rounded-2xl border border-gray-800 text-center hover:border-emerald-500/50 transition transform hover:-translate-y-1">
+                <i class="fas.fa-globe text-4xl text-emerald-400 mb-3"></i>
+                <h4 class="font-semibold text-sm">Others</h4>
+                <p class="text-xs text-gray-400 mt-1">Universal Link</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-800 py-8 text-center text-gray-500 text-xs">
+        <p>&copy; 2026 Download Links BD. All rights reserved. Built with passion for high-speed downloads.</p>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY & ANIMATIONS -->
+    <script>
+        // Remove splash screen after 2.5 seconds with fade out
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splashScreen');
+                splash.style.opacity = '0';
+                setTimeout(() => splash.style.display = 'none', 700);
+            }, 2500);
+        });
+
+        // Simulate Link Analysis
+        function handleFetchMedia() {
+            const urlInput = document.getElementById('mediaUrl').value;
+            const resultPanel = document.getElementById('resultPanel');
+            
+            if(!urlInput) {
+                alert('দয়া করে প্রথমে একটি ভিডিও লিংক পেস্ট করুন!');
+                return;
+            }
+
+            // Show loading state temporarily
+            resultPanel.classList.remove('hidden');
+            resultPanel.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Simulate Download Trigger with Animation
+        function triggerDownload(quality) {
+            alert(`আপনার নির্বাচন করা (${quality}) কোয়ালিটিতে ডাউনলোড শুরু হচ্ছে! অনুগ্রহ করে একটু অপেক্ষা করুন।`);
+        }
+    </script>
+</body>
+</html>
