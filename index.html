@@ -61,7 +61,7 @@
         <h1 class="font-orbitron text-2xl md:text-5xl font-black tracking-wider bg-gradient-to-r from-brandPrimary via-pink-500 to-amber-400 bg-clip-text text-transparent animate-pulse">
             DOWNLOAD LINKS BD
         </h1>
-        <p class="text-gray-400 mt-2 text-xs md:text-sm tracking-widest uppercase">Preparing Your Media Hub...</p>
+        <p class="text-gray-400 mt-2 text-xs md:text-sm tracking-widest uppercase">Initializing Media Server...</p>
     </div>
 
     <!-- MAIN NAVBAR -->
@@ -87,7 +87,7 @@
         <span class="inline-block bg-brandPrimary/20 text-brandPrimary text-[11px] md:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest border border-brandPrimary/30 mb-4">
             ⚡ No Watermark • 4K/2K/1080p • MP3 Supported
         </span>
-        <h2 class="font-orbitron text-2xl sm:text-3xl md:text-5xl font-extxl font-extrabold leading-tight">
+        <h2 class="font-orbitron text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight">
             Download Any Video & Audio <br class="hidden sm:inline">
             <span class="bg-gradient-to-r from-brandPrimary to-brandAccent bg-clip-text text-transparent">Instantly & Free</span>
         </h2>
@@ -102,7 +102,7 @@
                     <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
                         <i class="fas fa-link text-sm"></i>
                     </span>
-                    <input type="url" id="mediaUrl" placeholder="Paste link here (YouTube, FB, TikTok...)" 
+                    <input type="url" id="mediaUrl" placeholder="Paste video link here (YouTube, FB, TikTok...)" 
                         class="w-full pl-10 pr-4 py-3.5 bg-brandDark border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-brandPrimary transition text-xs md:text-sm">
                 </div>
                 <button onclick="handleFetchMedia()" class="bg-gradient-to-r from-brandPrimary to-brandAccent hover:opacity-90 font-semibold px-6 py-3.5 rounded-xl transition duration-300 flex items-center justify-center space-x-2 shadow-lg cursor-pointer text-sm">
@@ -127,31 +127,31 @@
         <div id="resultPanel" class="hidden mt-6 bg-brandCard p-4 md:p-6 rounded-2xl border border-brandPrimary/50 text-left transition-all">
             <div class="flex flex-col md:flex-row gap-4 items-center">
                 <div class="w-full md:w-1/3 bg-brandDark rounded-xl overflow-hidden aspect-video relative flex items-center justify-center border border-gray-700">
-                    <i class="fas.fa-film text-3xl text-brandPrimary animate-bounce"></i>
+                    <i class="fas fa-film text-3xl text-brandPrimary animate-bounce"></i>
                     <span class="absolute bottom-2 right-2 bg-black/70 text-[10px] px-2 py-0.5 rounded text-white">HD Ready</span>
                 </div>
                 <div class="w-full md:w-2/3 space-y-3">
                     <h3 id="videoTitle" class="font-semibold text-sm md:text-base text-white">Media File Ready for Download</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                        <button onclick="triggerDownload('4K Ultra HD')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition">
-                            <span class="text-brandPrimary font-bold text-xs md:text-sm">4K</span>
-                            <span class="text-gray-400 text-[9px]">No Watermark</span>
+                        <button onclick="triggerDirectDownload('4K_Video.mp4')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition cursor-pointer">
+                            <span class="text-brandPrimary font-bold text-xs md:text-sm">4K Ultra HD</span>
+                            <span class="text-gray-400 text-[9px]">Direct Download</span>
                         </button>
-                        <button onclick="triggerDownload('2K Quad HD')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition">
-                            <span class="text-brandPrimary font-bold text-xs md:text-sm">2K</span>
-                            <span class="text-gray-400 text-[9px]">High Res</span>
+                        <button onclick="triggerDirectDownload('2K_Video.mp4')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition cursor-pointer">
+                            <span class="text-brandPrimary font-bold text-xs md:text-sm">2K Quad HD</span>
+                            <span class="text-gray-400 text-[9px]">Direct Download</span>
                         </button>
-                        <button onclick="triggerDownload('1080p FHD')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition">
-                            <span class="text-brandPrimary font-bold text-xs md:text-sm">1080p</span>
-                            <span class="text-gray-400 text-[9px]">HD Video</span>
+                        <button onclick="triggerDirectDownload('1080p_Video.mp4')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition cursor-pointer">
+                            <span class="text-brandPrimary font-bold text-xs md:text-sm">1080p FHD</span>
+                            <span class="text-gray-400 text-[9px]">Direct Download</span>
                         </button>
-                        <button onclick="triggerDownload('360p SD')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition">
-                            <span class="text-brandPrimary font-bold text-xs md:text-sm">360p</span>
-                            <span class="text-gray-400 text-[9px]">Low Data</span>
+                        <button onclick="triggerDirectDownload('360p_Video.mp4')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition cursor-pointer">
+                            <span class="text-brandPrimary font-bold text-xs md:text-sm">360p SD</span>
+                            <span class="text-gray-400 text-[9px]">Direct Download</span>
                         </button>
-                        <button onclick="triggerDownload('MP3 Audio (320kbps)')" class="bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/40 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition col-span-2">
-                            <span class="text-pink-400 font-bold text-xs md:text-sm"><i class="fas fa-music mr-1"></i> Audio MP3</span>
-                            <span class="text-gray-300 text-[9px]">320kbps HQ</span>
+                        <button onclick="triggerDirectDownload('Audio_Track.mp3')" class="bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/40 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition col-span-2 cursor-pointer">
+                            <span class="text-pink-400 font-bold text-xs md:text-sm"><i class="fas fa-music mr-1"></i> MP3 Audio (320kbps)</span>
+                            <span class="text-gray-300 text-[9px]">Direct Audio Download</span>
                         </button>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
         <p>&copy; 2026 Download Links BD. All rights reserved.</p>
     </footer>
 
-    <!-- SCRIPT -->
+    <!-- SCRIPT FOR ENGLISH & DIRECT DOWNLOAD TRIGGER -->
     <script>
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -212,15 +212,23 @@
             const urlInput = document.getElementById('mediaUrl').value;
             const resultPanel = document.getElementById('resultPanel');
             if(!urlInput) {
-                alert('দয়া করে প্রথমে একটি ভিডিও লিংক পেস্ট করুন!');
+                alert('Please enter a valid media link first!');
                 return;
             }
             resultPanel.classList.remove('hidden');
             resultPanel.scrollIntoView({ behavior: 'smooth' });
         }
 
-        function triggerDownload(quality) {
-            alert(`আপনার নির্বাচন করা (${quality}) কোয়ালিটিতে ডাউনলোড শুরু হচ্ছে!`);
+        // Triggers direct browser download mechanism without showing alerts
+        function triggerDirectDownload(filename) {
+            const element = document.createElement('a');
+            // Creating a dummy text blob to simulate clean direct download in browser
+            const file = new Blob(['Download Links BD - Media Content Package'], {type: 'text/plain'});
+            element.href = URL.createObjectURL(file);
+            element.download = filename;
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
         }
     </script>
 </body>
