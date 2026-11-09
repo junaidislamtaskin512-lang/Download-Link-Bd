@@ -1,235 +1,326 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Links BD - Ultimate Video & Audio Downloader</title>
-    <!-- Tailwind CSS CDN -->
+    <title>BD Bangla Movie - বিডি বাংলা মুভি</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Logos & Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        poppins: ['Poppins', 'sans-serif'],
-                        orbitron: ['Orbitron', 'sans-serif'],
-                    },
-                    colors: {
-                        brandDark: '#0f172a',
-                        brandCard: '#1e293b',
-                        brandPrimary: '#6366f1',
-                        brandAccent: '#ec4899',
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        @keyframes floatLogo {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(2deg); }
+        body {
+            background-color: #070a13;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .floating-icon {
-            animation: floatLogo 4s ease-in-out infinite;
+        .btn-theme {
+            background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+            color: #ffffff;
+            font-weight: 700;
+            transition: all 0.2s ease;
         }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.4); }
-            50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.8); }
+        .btn-theme:hover {
+            background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
         }
-        .glow-box {
-            animation: pulseGlow 3s infinite;
+        .movie-card {
+            transition: all 0.3s ease;
+        }
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.3);
+        }
+        video::cue {
+            background: rgba(0, 0, 0, 0.8);
+            color: #10b981;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0d9488;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-brandDark text-white font-poppins min-h-screen overflow-x-hidden selection:bg-brandPrimary selection:text-white">
+<body class="flex flex-col min-h-screen">
 
-    <!-- INTRO ANIMATION SCREEN -->
-    <div id="splashScreen" class="fixed inset-0 z-50 bg-brandDark flex flex-col items-center justify-center transition-all duration-700 px-4 text-center">
-        <div class="flex flex-wrap justify-center gap-4 mb-6 text-3xl md:text-6xl">
-            <i class="fab.fa-youtube text-red-500 floating-icon" style="animation-delay: 0s;"></i>
-            <i class="fab.fa-facebook text-blue-500 floating-icon" style="animation-delay: 0.3s;"></i>
-            <i class="fab.fa-tiktok text-pink-500 floating-icon" style="animation-delay: 0.6s;"></i>
-            <i class="fab.fa-instagram text-purple-500 floating-icon" style="animation-delay: 0.9s;"></i>
-            <i class="fab.fa-twitter text-sky-400 floating-icon" style="animation-delay: 1.2s;"></i>
-            <i class="fas.fa-globe text-emerald-400 floating-icon" style="animation-delay: 1.5s;"></i>
-        </div>
-        <h1 class="font-orbitron text-2xl md:text-5xl font-black tracking-wider bg-gradient-to-r from-brandPrimary via-pink-500 to-amber-400 bg-clip-text text-transparent animate-pulse">
-            DOWNLOAD LINKS BD
+    <!-- Top Header & Branding -->
+    <header class="bg-gray-950/90 border-b border-emerald-900/40 py-4 px-3 sticky top-0 z-40 backdrop-blur-md text-center">
+        <h1 class="text-3xl md:text-5xl font-black tracking-wider text-emerald-400 mb-1 drop-shadow-[0_2px_12px_rgba(16,185,129,0.5)]">
+            BD BANGLA MOVIE
         </h1>
-        <p class="text-gray-400 mt-2 text-xs md:text-sm tracking-widest uppercase">Initializing Media Server...</p>
-    </div>
+        <p class="text-xs text-cyan-400 font-semibold mb-2">Official Portal: BDBanglaMovie.com</p>
+        
+        <div class="text-[11px] text-gray-400 bg-gray-900/90 border border-emerald-800/40 max-w-xl mx-auto py-1 px-3 rounded-md mb-3">
+            ⚡ যেকোনো মুভি বা সিরিজ ব্রাউজার থেকেই ফুল এইচডি প্লে করুন এবং সরাসরি গ্যালারিতে ফাস্ট ডাউনলোড করুন।
+        </div>
 
-    <!-- MAIN NAVBAR -->
-    <header class="border-b border-gray-800 bg-brandDark/90 backdrop-blur-md sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brandPrimary to-brandAccent flex items-center justify-center shadow-lg">
-                    <i class="fas fa-cloud-arrow-down text-lg text-white"></i>
-                </div>
-                <span class="font-orbitron font-bold text-lg md:text-xl bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                    DownloadLinks<span class="text-brandPrimary">BD</span>
-                </span>
-            </div>
-            <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-300">
-                <a href="#downloader" class="hover:text-brandPrimary transition">Home</a>
-                <a href="#platforms" class="hover:text-brandPrimary transition">Platforms</a>
-            </div>
+        <!-- Top Menu Buttons -->
+        <div class="flex flex-wrap justify-center gap-2 text-xs font-semibold">
+            <button onclick="filterCategory('all')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded shadow"><i class="fa-solid fa-house"></i> HOME</button>
+            <button onclick="filterCategory('বাংলা')" class="bg-cyan-700 hover:bg-cyan-600 text-white px-3 py-1 rounded shadow">.BANGLA</button>
+            <button onclick="filterCategory('সাউথ')" class="bg-teal-700 hover:bg-teal-600 text-white px-3 py-1 rounded shadow">.SOUTH</button>
+            <button onclick="filterCategory('১৮+')" class="bg-rose-700 hover:bg-rose-600 text-white px-3 py-1 rounded shadow">.18+ ADULT</button>
         </div>
     </header>
 
-    <!-- HERO & DOWNLOAD SECTION -->
-    <section id="downloader" class="max-w-4xl mx-auto px-4 pt-10 md:pt-16 pb-12 text-center">
-        <span class="inline-block bg-brandPrimary/20 text-brandPrimary text-[11px] md:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest border border-brandPrimary/30 mb-4">
-            ⚡ No Watermark • 4K/2K/1080p • MP3 Supported
-        </span>
-        <h2 class="font-orbitron text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight">
-            Download Any Video & Audio <br class="hidden sm:inline">
-            <span class="bg-gradient-to-r from-brandPrimary to-brandAccent bg-clip-text text-transparent">Instantly & Free</span>
-        </h2>
-        <p class="text-gray-400 mt-3 max-w-lg mx-auto text-xs md:text-base">
-            Paste link from YouTube, Facebook, TikTok, Instagram, Twitter, or Others to get HD formats instantly.
-        </p>
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-3 py-4 flex-grow w-full">
 
-        <!-- INPUT BOX -->
-        <div class="mt-6 bg-brandCard p-4 md:p-6 rounded-2xl border border-gray-700/60 shadow-2xl glow-box text-left">
-            <div class="flex flex-col sm:flex-row gap-3">
-                <div class="relative flex-grow">
-                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                        <i class="fas fa-link text-sm"></i>
-                    </span>
-                    <input type="url" id="mediaUrl" placeholder="Paste video link here (YouTube, FB, TikTok...)" 
-                        class="w-full pl-10 pr-4 py-3.5 bg-brandDark border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-brandPrimary transition text-xs md:text-sm">
+        <!-- Category Grid Section -->
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 mb-4">
+            <button onclick="filterCategory('বাংলা')" class="btn-theme py-2 px-2 rounded text-xs flex items-center justify-center gap-1 shadow"><i class="fa-solid fa-flag"></i> BANGLA</button>
+            <button onclick="filterCategory('সাউথ')" class="btn-theme py-2 px-2 rounded text-xs flex items-center justify-center gap-1 shadow"><i class="fa-solid fa-bolt"></i> SOUTH DUB</button>
+            <button onclick="filterCategory('বলিউড')" class="btn-theme py-2 px-2 rounded text-xs flex items-center justify-center gap-1 shadow"><i class="fa-solid fa-clapperboard"></i> BOLLYWOOD</button>
+            <button onclick="filterCategory('হলিউড')" class="btn-theme py-2 px-2 rounded text-xs flex items-center justify-center gap-1 shadow"><i class="fa-solid fa-film"></i> HOLLYWOOD</button>
+            <button onclick="filterCategory('সিরিজ')" class="btn-theme py-2 px-2 rounded text-xs flex items-center justify-center gap-1 shadow"><i class="fa-solid fa-tv"></i> WEB SERIES</button>
+            <button onclick="filterCategory('১৮+')" class="bg-rose-700 hover:bg-rose-600 text-white font-bold py-2 px-2 rounded text-xs flex items-center justify-center gap-1 shadow"><i class="fa-solid fa-fire"></i> 18+ ADULT</button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative mb-5">
+            <input type="text" id="searchInput" onkeyup="searchMovies()" placeholder="Movie বা Series-এর নাম লিখে সার্চ করুন..." class="w-full bg-gray-900 text-white placeholder-gray-400 text-sm py-3 pl-4 pr-12 rounded-xl border border-emerald-600/40 focus:outline-none focus:border-emerald-400 shadow-inner">
+            <button onclick="searchMovies()" class="absolute right-0 top-0 bottom-0 bg-emerald-500 hover:bg-emerald-400 text-black px-5 rounded-r-xl flex items-center justify-center">
+                <i class="fa-solid fa-magnifying-glass text-base font-bold"></i>
+            </button>
+        </div>
+
+        <!-- Notice Banner -->
+        <div class="bg-emerald-950/40 border border-emerald-800/50 text-center py-2 px-3 rounded-xl text-xs md:text-sm font-semibold mb-6 text-emerald-300 shadow">
+            🎬 BD BANGLA MOVIE — অনলাইনে প্লে করুন এবং ফাস্ট সার্ভার থেকে হাই স্পিডে গ্যালারিতে নামান 🍿
+        </div>
+
+        <!-- Section Title & Pagination Header -->
+        <div class="flex items-center justify-between border-b-2 border-emerald-500 pb-2 mb-4">
+            <h3 id="sectionTitle" class="text-sm md:text-base font-black text-white flex items-center gap-2">
+                <span class="w-2 h-4 bg-emerald-500 rounded"></span> RECENTLY UPDATED MOVIES
+            </h3>
+            <div class="flex items-center gap-1 text-xs">
+                <button onclick="changePage(1)" id="pageBtn1" class="bg-emerald-600 text-white px-2.5 py-1 font-bold rounded">1</button>
+                <button onclick="changePage(2)" id="pageBtn2" class="bg-gray-800 hover:bg-gray-700 px-2.5 py-1 font-bold rounded text-gray-300">2</button>
+                <button onclick="changePage(3)" id="pageBtn3" class="bg-gray-800 hover:bg-gray-700 px-2.5 py-1 font-bold rounded text-gray-300">3</button>
+            </div>
+        </div>
+
+        <!-- Movie Cards Grid -->
+        <div id="movieGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <!-- Movie cards inserted dynamically -->
+        </div>
+
+    </main>
+
+    <!-- Advanced Video Player & Download Modal -->
+    <div id="movieModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-3 overflow-y-auto">
+        <div class="bg-gray-900 border border-emerald-600/60 rounded-2xl max-w-2xl w-full p-4 md:p-6 relative shadow-2xl">
+            <!-- Close Modal Button -->
+            <button onclick="closeModal()" class="absolute top-3 right-3 bg-gray-800 hover:bg-rose-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Video Title & Category -->
+            <div class="mb-3">
+                <span id="modalCategory" class="bg-emerald-600 text-[10px] font-black px-2 py-0.5 rounded text-white uppercase"></span>
+                <h2 id="modalTitle" class="text-xl font-black text-white mt-1"></h2>
+            </div>
+
+            <!-- Built-in HTML5 Video Player -->
+            <div class="relative aspect-video bg-black rounded-xl overflow-hidden mb-4 border border-gray-800">
+                <video id="mainVideoPlayer" controls class="w-full h-full object-contain">
+                    <source id="videoSource" src="" type="video/mp4">
+                    <track id="videoSubtitles" kind="subtitles" srclang="bn" label="Bengali Subtitle" default>
+                    আপনার ব্রাউজারে প্লেয়ারটি সাপোর্ট করছে না।
+                </video>
+            </div>
+
+            <!-- Custom Controls: Quality & Audio Alert -->
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4 bg-gray-950 p-3 rounded-xl border border-gray-800 text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-400 font-bold">কোয়ালিটি:</span>
+                    <button onclick="changeQuality('1080p')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-2 py-1 rounded font-bold">1080p</button>
+                    <button onclick="changeQuality('720p')" class="bg-gray-800 hover:bg-gray-700 text-gray-300 px-2 py-1 rounded font-bold">720p</button>
+                    <button onclick="changeQuality('480p')" class="bg-gray-800 hover:bg-gray-700 text-gray-300 px-2 py-1 rounded font-bold">480p</button>
                 </div>
-                <button onclick="handleFetchMedia()" class="bg-gradient-to-r from-brandPrimary to-brandAccent hover:opacity-90 font-semibold px-6 py-3.5 rounded-xl transition duration-300 flex items-center justify-center space-x-2 shadow-lg cursor-pointer text-sm">
-                    <i class="fas fa-search"></i>
-                    <span>Analyze</span>
-                </button>
-            </div>
-
-            <!-- Platform Quick Badges -->
-            <div class="flex flex-wrap items-center justify-center gap-2 mt-5 pt-4 border-t border-gray-800 text-xs">
-                <span class="text-gray-400 mr-1 hidden sm:inline">Supported:</span>
-                <span class="px-2.5 py-1 bg-red-500/10 text-red-400 border border-red-500/20 rounded-full font-medium"><i class="fab fa-youtube"></i> YouTube</span>
-                <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full font-medium"><i class="fab fa-facebook"></i> Facebook</span>
-                <span class="px-2.5 py-1 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-full font-medium"><i class="fab fa-tiktok"></i> TikTok</span>
-                <span class="px-2.5 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-full font-medium"><i class="fab fa-instagram"></i> Instagram</span>
-                <span class="px-2.5 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full font-medium"><i class="fab fa-twitter"></i> Twitter</span>
-                <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full font-medium"><i class="fas fa-globe"></i> Others</span>
-            </div>
-        </div>
-
-        <!-- DOWNLOAD RESULTS PANEL -->
-        <div id="resultPanel" class="hidden mt-6 bg-brandCard p-4 md:p-6 rounded-2xl border border-brandPrimary/50 text-left transition-all">
-            <div class="flex flex-col md:flex-row gap-4 items-center">
-                <div class="w-full md:w-1/3 bg-brandDark rounded-xl overflow-hidden aspect-video relative flex items-center justify-center border border-gray-700">
-                    <i class="fas fa-film text-3xl text-brandPrimary animate-bounce"></i>
-                    <span class="absolute bottom-2 right-2 bg-black/70 text-[10px] px-2 py-0.5 rounded text-white">HD Ready</span>
-                </div>
-                <div class="w-full md:w-2/3 space-y-3">
-                    <h3 id="videoTitle" class="font-semibold text-sm md:text-base text-white">Media File Ready for Download</h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                        <button onclick="triggerDirectDownload('4K_Video.mp4')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition cursor-pointer">
-                            <span class="text-brandPrimary font-bold text-xs md:text-sm">4K Ultra HD</span>
-                            <span class="text-gray-400 text-[9px]">Direct Download</span>
-                        </button>
-                        <button onclick="triggerDirectDownload('2K_Video.mp4')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition cursor-pointer">
-                            <span class="text-brandPrimary font-bold text-xs md:text-sm">2K Quad HD</span>
-                            <span class="text-gray-400 text-[9px]">Direct Download</span>
-                        </button>
-                        <button onclick="triggerDirectDownload('1080p_Video.mp4')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition cursor-pointer">
-                            <span class="text-brandPrimary font-bold text-xs md:text-sm">1080p FHD</span>
-                            <span class="text-gray-400 text-[9px]">Direct Download</span>
-                        </button>
-                        <button onclick="triggerDirectDownload('360p_Video.mp4')" class="bg-brandDark hover:bg-brandPrimary/20 border border-gray-700 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition cursor-pointer">
-                            <span class="text-brandPrimary font-bold text-xs md:text-sm">360p SD</span>
-                            <span class="text-gray-400 text-[9px]">Direct Download</span>
-                        </button>
-                        <button onclick="triggerDirectDownload('Audio_Track.mp3')" class="bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/40 p-2 rounded-lg text-xs font-medium flex flex-col items-center transition col-span-2 cursor-pointer">
-                            <span class="text-pink-400 font-bold text-xs md:text-sm"><i class="fas fa-music mr-1"></i> MP3 Audio (320kbps)</span>
-                            <span class="text-gray-300 text-[9px]">Direct Audio Download</span>
-                        </button>
-                    </div>
+                <div class="text-emerald-400 font-bold text-[11px] flex items-center gap-1">
+                    <i class="fa-solid fa-volume-high animate-bounce"></i> Video Play From BD Bangla Movie
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- PLATFORMS GRID SECTION -->
-    <section id="platforms" class="max-w-6xl mx-auto px-4 py-10 border-t border-gray-800/80">
-        <div class="text-center mb-8">
-            <h3 class="font-orbitron text-xl md:text-2xl font-bold">Supported Platforms</h3>
-            <p class="text-gray-400 text-xs md:text-sm mt-1">Universal link downloader for all social media.</p>
-        </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            <div class="bg-brandCard p-4 rounded-xl border border-gray-800 text-center hover:border-red-500/50 transition">
-                <i class="fab.fa-youtube text-3xl text-red-500 mb-2"></i>
-                <h4 class="font-semibold text-xs">YouTube</h4>
-            </div>
-            <div class="bg-brandCard p-4 rounded-xl border border-gray-800 text-center hover:border-blue-500/50 transition">
-                <i class="fab.fa-facebook text-3xl text-blue-500 mb-2"></i>
-                <h4 class="font-semibold text-xs">Facebook</h4>
-            </div>
-            <div class="bg-brandCard p-4 rounded-xl border border-gray-800 text-center hover:border-pink-500/50 transition">
-                <i class="fab.fa-tiktok text-3xl text-pink-500 mb-2"></i>
-                <h4 class="font-semibold text-xs">TikTok</h4>
-            </div>
-            <div class="bg-brandCard p-4 rounded-xl border border-gray-800 text-center hover:border-purple-500/50 transition">
-                <i class="fab.fa-instagram text-3xl text-purple-500 mb-2"></i>
-                <h4 class="font-semibold text-xs">Instagram</h4>
-            </div>
-            <div class="bg-brandCard p-4 rounded-xl border border-gray-800 text-center hover:border-sky-500/50 transition">
-                <i class="fab.fa-twitter text-3xl text-sky-400 mb-2"></i>
-                <h4 class="font-semibold text-xs">Twitter / X</h4>
-            </div>
-            <div class="bg-brandCard p-4 rounded-xl border border-gray-800 text-center hover:border-emerald-500/50 transition">
-                <i class="fas.fa-globe text-3xl text-emerald-400 mb-2"></i>
-                <h4 class="font-semibold text-xs">Others</h4>
-            </div>
-        </div>
-    </section>
+            <!-- Details Description -->
+            <p id="modalDesc" class="text-xs text-gray-300 mb-4 leading-relaxed bg-gray-950/60 p-3 rounded-lg border border-gray-800"></p>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-gray-800 py-6 text-center text-gray-500 text-[11px]">
-        <p>&copy; 2026 Download Links BD. All rights reserved.</p>
+            <!-- Download Section -->
+            <div class="space-y-2">
+                <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">হাই-স্পিড ডাউনলোড লিংক (গ্যালারিতে সেভ করুন):</h4>
+                
+                <!-- Fast Download Button -->
+                <a id="fastDownloadBtn" href="#" download class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition" onclick="onDownloadClick('Fast Server')">
+                    <i class="fa-solid fa-download text-base"></i> Fast Direct Download (গ্যালারিতে ফাস্ট সেভ)
+                </a>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="onDownloadClick('Google Drive')" class="bg-gray-800 hover:bg-gray-700 text-gray-200 py-2.5 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5 border border-gray-700">
+                        <i class="fa-brands fa-google-drive text-green-400"></i> Google Drive
+                    </button>
+                    <button onclick="onDownloadClick('Telegram File')" class="bg-blue-950 hover:bg-blue-900 text-blue-200 py-2.5 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5 border border-blue-800">
+                        <i class="fa-brands fa-telegram text-blue-400"></i> Telegram Direct
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-900 py-6 text-center text-xs text-gray-500 mt-auto">
+        <p class="text-emerald-400 font-black mb-1">BD BANGLA MOVIE</p>
+        <p>© 2026 BD Bangla Movie | সর্বস্বত্ব সংরক্ষিত</p>
     </footer>
 
-    <!-- SCRIPT FOR ENGLISH & DIRECT DOWNLOAD TRIGGER -->
+    <!-- JavaScript Data & System Logic -->
     <script>
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const splash = document.getElementById('splashScreen');
-                splash.style.opacity = '0';
-                setTimeout(() => splash.style.display = 'none', 600);
-            }, 2000);
-        });
+        // Sample Video Sources (Direct MP4 for Real Instant Play & Fast Download)
+        const sampleVideo = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+        const sampleVideo2 = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
 
-        function handleFetchMedia() {
-            const urlInput = document.getElementById('mediaUrl').value;
-            const resultPanel = document.getElementById('resultPanel');
-            if(!urlInput) {
-                alert('Please enter a valid media link first!');
+        // Movie Database with Pages
+        const moviesPage1 = [
+            { id: 1, title: "তুফান (Tufan) 2024", category: "বাংলা", quality: "1080p Full HD", img: "https://picsum.photos/300/450?random=301", video: sampleVideo, desc: "মেগা ব্লকবাস্টার শাকিব খান অভিনিত তুফান মুভি। ফুল এইচডি কোয়ালিটিতে প্লে করুন এবং হাই স্পিডে গ্যালারিতে সেভ করুন।" },
+            { id: 2, title: "Pushpa 2: The Rule", category: "সাউথ", quality: "4K Dual Audio", img: "https://picsum.photos/300/450?random=302", video: sampleVideo2, desc: "আল্লু অর্জুন অ্যাকশন সাউথ ডাবড মুভি পুষ্পা ২। সরাসরি প্লেয়ারে চালু করুন।" },
+            { id: 3, title: "কারাগার (Karagar S02)", category: "সিরিজ", quality: "1080p WEB-DL", img: "https://picsum.photos/300/450?random=303", video: sampleVideo, desc: "হইচই ওটিটি প্ল্যাটফর্মের জনপ্রিয় ওয়েব সিরিজ কারাগার ২ অল এপিসোড।" },
+            { id: 4, title: "জওয়ান (Jawan)", category: "বলিউড", quality: "1080p HD", img: "https://picsum.photos/300/450?random=304", video: sampleVideo2, desc: "শাহরুখ খান অভিনীত মেগা হিট অ্যাকশন মুভি জওয়ান বাংলা ও হিন্দি ভাষা।" },
+            { id: 5, title: "Deadpool & Wolverine", category: "হলিউড", quality: "1080p Dual", img: "https://picsum.photos/300/450?random=305", video: sampleVideo, desc: "মার্ভেলের নতুন অ্যাকশন কমেডি মুভি ইংলিশ ও হিন্দি ডাবড।" },
+            { id: 6, title: "Desire (১৮+ Adult Thriller)", category: "১৮+", quality: "720p Uncut", img: "https://picsum.photos/300/450?random=306", video: sampleVideo2, desc: "প্রিমিয়াম ১৮+ এডাল্ট ড্রামা থ্রিলার। শুধুমাত্র প্রাপ্তবয়স্কদের জন্য।" }
+        ];
+
+        const moviesPage2 = [
+            { id: 7, title: "প্রিয়তমা (Priyotoma)", category: "বাংলা", quality: "1080p HD", img: "https://picsum.photos/300/450?random=307", video: sampleVideo, desc: "শাকিব খান ও ইধিকা পাল অভিনিত রোমান্টিক বাংলা মুভি প্রিয়তমা।" },
+            { id: 8, title: "KGF Chapter 2", category: "সাউথ", quality: "1080p Hindi", img: "https://picsum.photos/300/450?random=308", video: sampleVideo2, desc: "রকিং স্টার ইয়াশের মেগা হিট সাউথ অ্যাকশন সিনেমা কেজিএফ ২।" },
+            { id: 9, title: "পঞ্চায়েত (Panchayat S03)", category: "সিরিজ", quality: "720p HD", img: "https://picsum.photos/300/450?random=309", video: sampleVideo, desc: "আমাজন প্রাইমের অলটাইম জনপ্রিয় কমেডি ওয়েব সিরিজ পঞ্চায়েত সিজন ৩।" },
+            { id: 10, title: "Stree 2 (হিন্দি)", category: "বলিউড", quality: "1080p WEB", img: "https://picsum.photos/300/450?random=310", video: sampleVideo2, desc: "শ্রদ্ধা কাপুর ও রাজকুমার রাও অভিনিত মেগা কমেডি হরর সিনেমা।" }
+        ];
+
+        let currentMovies = moviesPage1;
+        const movieGrid = document.getElementById('movieGrid');
+        const searchInput = document.getElementById('searchInput');
+
+        // Render Movie Cards Grid
+        function renderMovies(list) {
+            movieGrid.innerHTML = '';
+            if(list.length === 0) {
+                movieGrid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-400 font-semibold text-xs">কোনো মুভি পাওয়া যায়নি! নাম সঠিকভাবে টাইপ করুন।</div>`;
                 return;
             }
-            resultPanel.classList.remove('hidden');
-            resultPanel.scrollIntoView({ behavior: 'smooth' });
+            list.forEach(m => {
+                const card = document.createElement('div');
+                card.className = "movie-card bg-gray-900 border border-emerald-900/40 rounded-xl overflow-hidden cursor-pointer shadow flex flex-col justify-between";
+                card.onclick = () => openModal(m);
+                card.innerHTML = `
+                    <div class="relative aspect-[2/3] overflow-hidden">
+                        <img src="${m.img}" class="w-full h-full object-cover" alt="${m.title}">
+                        <span class="absolute top-2 left-2 bg-emerald-600 text-white text-[9px] font-black px-2 py-0.5 rounded shadow">${m.quality}</span>
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <i class="fa-solid fa-circle-play text-emerald-400 text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-2.5">
+                        <span class="text-[10px] text-emerald-400 font-bold uppercase">${m.category}</span>
+                        <h4 class="text-xs font-bold text-white line-clamp-1 mt-0.5">${m.title}</h4>
+                    </div>
+                `;
+                movieGrid.appendChild(card);
+            });
         }
 
-        // Triggers direct browser download mechanism without showing alerts
-        function triggerDirectDownload(filename) {
-            const element = document.createElement('a');
-            // Creating a dummy text blob to simulate clean direct download in browser
-            const file = new Blob(['Download Links BD - Media Content Package'], {type: 'text/plain'});
-            element.href = URL.createObjectURL(file);
-            element.download = filename;
-            document.body.appendChild(element);
-            element.click();
-            document.body.removeChild(element);
+        // Live Search Logic
+        function searchMovies() {
+            const query = searchInput.value.toLowerCase().trim();
+            const filtered = currentMovies.filter(m => m.title.toLowerCase().includes(query) || m.category.toLowerCase().includes(query));
+            renderMovies(filtered);
         }
+
+        // Category Filter
+        function filterCategory(cat) {
+            if(cat === 'all') {
+                renderMovies(currentMovies);
+                document.getElementById('sectionTitle').innerText = "RECENTLY UPDATED MOVIES";
+                return;
+            }
+            const filtered = currentMovies.filter(m => m.category.toLowerCase() === cat.toLowerCase());
+            renderMovies(filtered.length > 0 ? filtered : currentMovies);
+            document.getElementById('sectionTitle').innerText = `${cat} ক্যাটাগরির মুভি`;
+        }
+
+        // Pagination Handler
+        function changePage(pageNo) {
+            document.querySelectorAll('[id^="pageBtn"]').forEach(btn => {
+                btn.className = "bg-gray-800 hover:bg-gray-700 px-2.5 py-1 font-bold rounded text-gray-300";
+            });
+            document.getElementById(`pageBtn${pageNo}`).className = "bg-emerald-600 text-white px-2.5 py-1 font-bold rounded";
+
+            if (pageNo === 1) currentMovies = moviesPage1;
+            else if (pageNo === 2) currentMovies = moviesPage2;
+            else currentMovies = moviesPage1;
+
+            renderMovies(currentMovies);
+        }
+
+        // Open Movie & Play Player
+        function openModal(m) {
+            document.getElementById('modalTitle').innerText = m.title;
+            document.getElementById('modalCategory').innerText = m.category;
+            document.getElementById('modalDesc').innerText = m.desc;
+
+            // Player Setup
+            const player = document.getElementById('mainVideoPlayer');
+            const source = document.getElementById('videoSource');
+            const downloadBtn = document.getElementById('fastDownloadBtn');
+
+            source.src = m.video;
+            downloadBtn.href = m.video; // Direct link for instant download
+            player.load();
+
+            // Speak / Announce Branding Notice
+            speakNotice();
+
+            document.getElementById('movieModal').classList.remove('hidden');
+        }
+
+        // Close Modal
+        function closeModal() {
+            const player = document.getElementById('mainVideoPlayer');
+            player.pause();
+            document.getElementById('movieModal').classList.add('hidden');
+        }
+
+        // Voice Branding Alert ("Video Play From BD Bangla Movie")
+        function speakNotice() {
+            if ('speechSynthesis' in window) {
+                const msg = new SpeechSynthesisUtterance("Video Play From BD Bangla Movie");
+                msg.lang = 'en-US';
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            }
+        }
+
+        // Quality Switcher
+        function changeQuality(q) {
+            alert(`${q} কোয়ালিটি সুইচ করা হয়েছে।`);
+        }
+
+        // Ad Redirect & Fast Download Trigger
+        function onDownloadClick(serverName) {
+            // Trigger Ad Popup
+            window.open('https://example.com/ads-redirect', '_blank');
+            alert(`${serverName} থেকে ফাইল ডাউনলোডের নির্দেশ দেওয়া হয়েছে। এটি সরাসরি আপনার ডিভাইসে/গ্যালারিতে সেভ হবে!`);
+        }
+
+        // Initial Load
+        renderMovies(currentMovies);
     </script>
 </body>
 </html>
